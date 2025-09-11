@@ -1,0 +1,51 @@
+-- 🔒 Script de Teste Anti-Cheat
+-- Use apenas em ambiente de desenvolvimento!
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local player = Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+local hrp = char:WaitForChild("HumanoidRootPart")
+local humanoid = char:WaitForChild("Humanoid")
+
+print(">>> [Teste Anti-Cheat] Script carregado. Iniciando em 3s...")
+task.wait(3)
+
+-- 1) Simular TP instantâneo
+print(">>> Teste 1: TP instantâneo de 1000 studs")
+hrp.CFrame = hrp.CFrame + Vector3.new(1000, 0, 0)
+task.wait(3)
+
+-- 2) Simular Speed Hack
+print(">>> Teste 2: Speed hack WalkSpeed = 200")
+humanoid.WalkSpeed = 200
+task.wait(3)
+humanoid.WalkSpeed = 16 -- reset
+
+-- 3) Simular JumpPower absurdo
+print(">>> Teste 3: JumpPower hack JumpPower = 300")
+humanoid.UseJumpPower = true
+humanoid.JumpPower = 300
+task.wait(3)
+humanoid.JumpPower = 50 -- reset
+
+-- 4) Simular Fly (mudando CFrame no ar)
+print(">>> Teste 4: Fly simulation (5s)")
+for i = 1, 50 do
+    hrp.CFrame = hrp.CFrame + Vector3.new(0, 2, 0)
+    task.wait(0.1)
+end
+
+-- 5) Simular Remote Spam (se existir um Remote chamado "TP_Request")
+local testRemote = ReplicatedStorage:FindFirstChild("TP_Request")
+if testRemote then
+    print(">>> Teste 5: Remote Spam (20 chamadas rápidas)")
+    for i = 1, 20 do
+        testRemote:FireServer({ base = "BaseFake", mode = "instant" })
+    end
+else
+    print(">>> Nenhum Remote 'TP_Request' encontrado, pulando Teste 5")
+end
+
+print(">>> [Teste Anti-Cheat] Finalizado.")
