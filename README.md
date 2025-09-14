@@ -23,7 +23,7 @@
   &nbsp;
     <a href="https://darkmodde.xyz/CMSP-Hacks"><img width="10%" alt="Matific" title="Matific" src="https://i.imgur.com/L2kjjO9.png"/></a>
   &nbsp;
-    <a href="https://darkmodde.xyz/CMSP-Hacks"><img width="10%" alt="SPeak" title="SPeak" src="https://i.imgur.com/pix66D5.png"/></a>
+    <a href="https://darkmodde.xyz/CMSP-Hacks"><img width="10%" alt="SPeak" jajrwdadtitle="SPeak" src="https://i.imgur.com/pix66D5.png"/></a>
   &nbsp;
     <a href="https://darkmodde.xyz/CMSP-Hacks"><img width="10%" alt="Alura" title="Alura" src="https://i.imgur.com/Lyhs87G.png"/></a>
 </p>
